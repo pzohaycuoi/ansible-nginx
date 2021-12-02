@@ -1,0 +1,11 @@
+---
+- hosts: all-node
+  tasks:
+    - name: enable ufw
+      community.general.ufw:
+        state: enabled
+    - name: enable nginx HTTP port
+      community.general.ufw:
+        rule: allow
+        name: Nginx HTTP
+        from_ip: any
